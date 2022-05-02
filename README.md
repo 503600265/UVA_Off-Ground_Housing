@@ -6,6 +6,10 @@ Clone the current project from Github:
 
 $ git clone https://github.com/503600265/UVA_Off-Ground_Housing.git
 
+Install required packages:
+
+$ pip install -r requirements.txt
+
 Run Localhost:
 
 $ python manage.py runserver
