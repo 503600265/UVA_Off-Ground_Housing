@@ -5,9 +5,10 @@ This is a semester long project for UVA fall 2021's CS 3240 course, Advanced Sof
 Clone the current project from Github:
 
 $ mkdir cs3240
-$ git clone https://github.com/tinnieteal/uva-cs4780-s21.git
+$ git clone https://github.com/503600265/UVA_Off-Ground_Housing.git
 
 Run Localhost:
 
 $ python manage.py runserver
+
 If you visit http://127.0.0.1:8000/, you should be able to see the website to be tested!
