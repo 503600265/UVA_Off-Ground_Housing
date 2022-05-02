@@ -4,7 +4,6 @@ This is a semester long project for UVA fall 2021's CS 3240 course, Advanced Sof
 # Setup
 Clone the current project from Github:
 
-$ mkdir cs3240
 $ git clone https://github.com/503600265/UVA_Off-Ground_Housing.git
 
 Run Localhost:
