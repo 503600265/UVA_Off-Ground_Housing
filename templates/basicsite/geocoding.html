@@ -1,0 +1,176 @@
+  <!-- This is the view with no pins -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <head>
+    <style>
+      .dropdown-menu {
+      min-width: 82px !important;
+  }
+    </style>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+      <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>UVA Off-Grounds Housing - GeoCoding</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" style="color:#E57200; font-size:25px">UVA Off-Grounds Housing</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/basicsite/maps/">Maps</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/basicsite/about/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/basicsite/maps/1">Lark on Main</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/basicsite/maps/2">Grandmarc</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/basicsite/maps/3">Venable</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/basicsite/maps/4">The Standard</a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-item dropdown">
+      <a class="btn btn-secondary btn-sm dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+      <div class="dropdown-menu" aria-labelledby="dropdown01">
+        <center><a href="/logout" style="text-decoration:none;">Logout</a></center>
+        <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+      </div>
+    </div>
+      </nav>
+
+  </body>
+
+    <!-- </nav> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+     <title>Interactive maps for Django web apps</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+  <link   rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous">
+</script>
+
+  <meta charset='utf-8' />
+  <title>Local search app</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
+  <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 1;
+    }
+
+    #map {
+      position: fixed;
+      top: 5em;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div id='map'>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYi0xMGhvdXNpbmciLCJhIjoiY2t2a2NuazlzZDQyNDJwcTZ2aDlrcGNncSJ9.lIlkHq4z4rKVMXtofhIAfQ';
+    const map = new mapboxgl.Map({
+    container: 'map', // Container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // Map style to use
+    center: [-78.5003, 38.0347], // Starting position [lng, lat]
+    zoom: 12, // Starting zoom level
+
+  });
+
+
+  const geocoder = new MapboxGeocoder({
+  // Initialize the geocoder
+  accessToken: mapboxgl.accessToken, // Set the access token
+
+  mapboxgl: mapboxgl, // Set the mapbox-gl instance
+  marker: true // Do not use the default marker style
+  });
+
+
+
+  /*
+  // Add the geocoder to the map
+  map.addControl(geocoder);
+  map.addControl(new mapboxgl.NavigationControl());
+  const mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+  mapboxClient.geocoding
+  .forwardGeocode({
+  query: selected_housing,
+  autocomplete: false,
+  limit: 1
+  })
+  .send()
+  .then((response) => {
+  if (
+  !response ||
+  !response.body ||
+  !response.body.features ||
+  !response.body.features.length
+  ) {
+  console.error('Invalid response:');
+  console.error(response);
+  return;
+  }
+  const feature = response.body.features[0];
+
+
+
+// Create a marker and add it to the map.
+new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+});
+*/
+
+
+
+</script>
+      <a class="btn btn-outline-danger" href="/basicsite/" >Go Back</a>
+
+
+  </div>
+
+</body>
+</html>

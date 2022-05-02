@@ -1,0 +1,32 @@
+{% load bootstrap5 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+
+{% bootstrap_messages %}
+{{ form.errors }}
+{{ form.non_field_errors }}
+<html lang="en">
+<body style="background-color:rgb(227, 238, 253);">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The About Page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <h3><center>Sorry. Unfortunately, your submission was invalid. Make sure to review what is being asked for each field and try again.</h3></center>
+</head>
+<body>
+
+<div><center>Click the link below to return to the Housing Submission Form.</div>
+
+</center>
+</body>
+
+<body><center>
+          <!-- <h2 class="my-4">Return to Housing Submission Form.</h2> -->
+          <a class="btn btn-outline-danger float-none mb-2" href="/basicsite/submit/">Go Back</a>
+</center></body>
+</html>

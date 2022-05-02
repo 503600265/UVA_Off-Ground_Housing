@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <html>
+
+   <head>
+     <style>
+       .dropdown-menu {
+       min-width: 82px !important;
+   }
+     </style>
+     <title>Interactive maps for Django web apps</title>
+     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="description" content="">
+     <meta name="author" content="">
+       <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+   <title>Starter Template for Bootstrap</title>
+
+   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+   <!-- Bootstrap core CSS -->
+   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Custom styles for this template -->
+   <link href="starter-template.css" rel="stylesheet">
+
+   </head>
+   <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a href="/basicsite/"><img src="https://gray-wvir-prod.cdn.arcpublishing.com/resizer/zS0MUjYm8Syl4nHNHxkjTJR4yK0=/1200x675/smart/filters:quality(85)/cloudfront-us-east-1.images.arcpublishing.com/gray/4DN5UPSSSZE3JCOIV72ZKSXDZM.png" width="60" alt="" class="d-inline-block align-middle mr-2"></a>
+      <a class="navbar-brand" style="color:#E57200; font-size:25px">UVA Off-Grounds Housing</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/basicsite/">Housing</a>
+              </li>
+              <li class="nav-item active">
+            <a class="nav-link" href="/basicsite/maps/">Maps</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/basicsite/about/">About</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-item dropdown">
+        <a class="btn btn-secondary btn-sm dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <center><a href="/logout" style="text-decoration:none;">Logout</a></center>
+          <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+        </div>
+      </div>
+        </nav>
+
+   </body>
+
+     <!-- </nav> -->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+     <script src="../../assets/js/vendor/popper.min.js"></script>
+     <script src="../../dist/js/bootstrap.min.js"></script>
+      <title>Interactive maps for Django web apps</title>
+     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+   <link   rel="stylesheet"
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+         crossorigin="anonymous">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+         crossorigin="anonymous">
+ </script>
+    <style>
+    body {
+      margin: 0;
+      padding: 1;
+    }
+
+    #map {
+      position: fixed;
+      top: 5em;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+   <body>
+    <h1>Housing Map</h1>
+    <div id='map' width="100%"></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYi0xMGhvdXNpbmciLCJhIjoiY2t2a2NuazlzZDQyNDJwcTZ2aDlrcGNncSJ9.lIlkHq4z4rKVMXtofhIAfQ';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-78.5003, 38.0347],
+    zoom: 13
+  });
+
+  const housing_list = '{{housing_addresses}}';
+  const housing_name = '{{housing_names}}';
+  const indices = {{indices}};
+  const index = {{names}}
+  const ids = {{ids}};
+  const coordinate = {{coordinates}};
+
+
+     //Temporary FIX! change id[0] to id[all excet last char which is a ;]
+// const url = "/basicsite/" + id[0]
+
+// var popup = new mapboxgl.Popup({offset: 25})
+//     .setText('Construction on the Washington Monument began in 1848.')
+//     //.setHTML('<a class="btn btn-outline-danger" href="url >Go Back</a>');
+//     .setHTML('<a class="btn btn-outline-danger" href="' + url + '" >Explore this housing</a>');
+
+// new mapboxgl.Marker().setLngLat([-78.495441, 38.032075]).setPopup(popup).addTo(map);
+
+  // Create a default Marker and add it to the map.
+    for (let i = 0; i < coordinate.length; i++) {
+      const url = "/basicsite/" + ids[i]
+
+    var popup = new mapboxgl.Popup({offset: 25})
+      //.setText({{ids}})
+      .setHTML('<b>' + housing_name.slice(index[i][0], index[i][1]) + '</b><div><a class="btn btn-outline-danger" href="' + url + '" >Explore</a></div>');
+
+
+      const marker1 = new mapboxgl.Marker()
+      .setLngLat(coordinate[i])
+      .setPopup(popup)
+      .addTo(map);
+    }
+
+    map.addControl(new mapboxgl.NavigationControl());
+
+
+
+
+</script>
+   <script>
+   </script>
+  </body>
+</html>

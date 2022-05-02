@@ -1,0 +1,140 @@
+{% load bootstrap5 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+
+{% bootstrap_messages %}
+{{ form.errors }}
+{{ form.non_field_errors }}
+<html lang="en">
+<body style="background-color:rgb(227, 238, 253);">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a href="/basicsite/"><img src="https://gray-wvir-prod.cdn.arcpublishing.com/resizer/zS0MUjYm8Syl4nHNHxkjTJR4yK0=/1200x675/smart/filters:quality(85)/cloudfront-us-east-1.images.arcpublishing.com/gray/4DN5UPSSSZE3JCOIV72ZKSXDZM.png" width="60" alt="" class="d-inline-block align-middle mr-2"></a>
+      <a class="navbar-brand" style="color:#E57200; font-size:25px">UVA Off-Grounds Housing</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/basicsite/">Housing</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/basicsite/maps/">Maps</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/basicsite/about/">About</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-item dropdown">
+        <a class="btn btn-secondary btn-sm dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <center><a href="/logout" style="text-decoration:none;">Logout</a></center>
+          <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+        </div>
+      </div>
+        </nav>
+<head>
+  <style>
+    .dropdown-menu {
+    min-width: 82px !important;
+}
+  </style>
+    <div class="card text-white bg-secondary mb-3" style="padding:20px; background-color:rgb(227, 238, 253);" >
+      <br><br><br>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <h1 style="background-color:#E57200; color: #0d3c65;"><center>Welcome!</h1></center>
+    <h3><center>Here you can <a href='/basicsite/'>search</a> and <a href='/basicsite/submit/'>add</a> listings near the University of Virginia.</h3></center>
+    </div>
+        </head>
+
+
+<body>
+<div></div>
+<div><h6 style="color: #0d3c65;"><center>On this website, you can find Housing listings available for rental.
+Search based on your specific preferences, such as # of bedrooms and bathrooms, price,
+and location. <br>You can also view our maps to see where our listings are physically located on
+GPS to help you plan and decide!</h6></div></center>
+<!-- <img align="right" src="https://brand.virginia.edu/sites/uva_brand/files/styles/asset_embed_smallest_1_x/public/2017-08/uva_primary_logo.jpg?h=b655f2ac" width = "300" alt="">
+-->
+<div class="row mx-sm-5 float-md-left" style="display: inline-block;">
+<div style="width:33%;display: inline-block;">
+<figure class="rounded mx-sm-0 float-md-left" style="display: inline-block;">
+  <figcaption>Housing!</figcaption>
+  <img src="https://res.cloudinary.com/b10-project/image/upload/v1638812577/2021-12-06_12_41_59-Settings_cy1psl.png" class="rounded  float-md-left" style="width:100%; border: 5px solid #E57200; display: inline-block;">
+</figure>
+</div>
+<div style="width:33%;display: inline-block;">
+<figure class="rounded mx-sm-0 float-md-left" style="display: inline-block;">
+  <figcaption>Submit Your Own Housing!</figcaption>
+  <img src="https://res.cloudinary.com/b10-project/image/upload/v1638812577/2021-12-06_12_42_27-Settings_c3d25i.png" class="rounded  float-md-left" style="width:100%; height:31%;border: 5px solid #E57200; display: inline-block;">
+</div>
+<div style="width:33%;display: inline-block;">
+<figure class="rounded mx-sm-0 float-md-left" style="display: inline-block;">
+  <figcaption>Map Integration!</figcaption>
+  <img src="https://res.cloudinary.com/b10-project/image/upload/v1638812577/2021-12-06_12_42_12-Settings_jqfqpe.png" class="rounded  float-md-left" style="width:100%; border: 5px solid #E57200; display: inline-block;">
+</figure>
+</div>
+</div>
+
+<!--<figure>
+  <figcaption style="text-align:center">Housing!</figcaption>
+  <img src="https://res.cloudinary.com/b10-project/image/upload/v1638812577/2021-12-06_12_41_59-Settings_cy1psl.png" class="rounded mx-auto" style="width:25%;">
+</figure>
+<figure>
+  <figcaption style="text-align:center">Housing!</figcaption>
+  <img src="https://res.cloudinary.com/b10-project/image/upload/v1638812577/2021-12-06_12_41_59-Settings_cy1psl.png" class="rounded mx-auto" style="width:25%;">
+</figure>
+<figure>
+  <figcaption style="text-align:center">Housing!</figcaption>
+  <img src="https://res.cloudinary.com/b10-project/image/upload/v1638812577/2021-12-06_12_41_59-Settings_cy1psl.png" class="rounded mx-auto" style="width:25%;">
+</figure>-->
+
+<head>
+  <br><br><br><br><br><br><br><br><br>
+	<h5 style="color: #0d3c65;"><center>This website was created by the B-10 Off-Grounds Housing group for the University of Virginia's
+	Fall 2021, CS 3240 class for Advanced Software Development.
+	</h5></center>
+</head>
+
+
+</body><center>
+          <!-- <h2 class="my-4">Return to Home Page</h2> -->
+          <!--a href="javascript:history.back()">Go Back</a></center> -->
+</html>
+
+<!--
+Sources Cited: https://brand.virginia.edu/brand-essentials/logos/university-virginia-logo
+For use of the University of Virginia Logo
+-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../assets/js/vendor/popper.min.js"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+<div>
+  <footer class="fixed-bottom" >
+    <center><div style="font-size:20px;" style="color:black;" style="background-color: black">
+      © 2021 Copyright: CS 3240 Housing Project B-10, UVA
+    </div></center>
+  </footer>
+</div>
+</html>
+<!-- Minified CSS and JS -->
+<link   rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous">
+</script>

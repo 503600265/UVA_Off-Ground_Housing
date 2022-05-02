@@ -1,0 +1,171 @@
+<html>
+
+
+<head>
+  <style>
+    .dropdown-menu {
+    min-width: 82px !important;
+}
+  </style>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+      <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>UVA Off-Grounds Housing</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+
+  </head>
+  <body style="background-color:rgb(227, 238, 253);">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a href="/"><img src="https://gray-wvir-prod.cdn.arcpublishing.com/resizer/zS0MUjYm8Syl4nHNHxkjTJR4yK0=/1200x675/smart/filters:quality(85)/cloudfront-us-east-1.images.arcpublishing.com/gray/4DN5UPSSSZE3JCOIV72ZKSXDZM.png" width="60" alt="" class="d-inline-block align-middle mr-2"></a>
+      <a class="navbar-brand" style="color:#E57200; font-size:25px">UVA Off-Grounds Housing</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</span></a>
+          </li>
+          <li class="nav-item active">
+                <a class="nav-link active" href="/basicsite/">Housing<span class="sr-only">(current)</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/basicsite/maps/">Maps</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/basicsite/about/">About</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-item dropdown">
+        <a class="btn btn-secondary btn-sm dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <center><a href="/logout" style="text-decoration:none;">Logout</a></center>
+          <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+        </div>
+      </div>
+        </nav>
+  </body>
+
+    <!-- </nav> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+     <title>Interactive maps for Django web apps</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+  <link   rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous">
+</script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6193d9c3d203424f"></script>
+
+<!-- <div class="card mb-3" >
+  <div class="row no-gutters">
+    <div class="col-md-4" style="width:640px;height:360px">
+      <img src="..." class="card-img" alt="..." >
+    </div>
+    <div class="col-md-6 ml-3">
+    <div class="house-body">
+      <center><h2 class="house-title mt-3"><a href="/basicsite/{{ housing.id }}/" class="text-decoration-none">{{ housing.name }}</a></h2></center>
+      <h5 class="house-text mt-3">Address: {{ housing.address }} </h4>
+      <p class="house-text mt-4">rating: {{ housing.rating }} </p>
+      <p class="house-text mt-3">price: ${{ housing.price }} </p>
+      <p class="house-text mt-3">bedrooms: {{ housing.numRooms }}</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="card" style="padding:70px; background-color:rgb(191, 209, 236);">
+  <center><h1 class="house-title mt-3" style="color:#E57200; display:inline-block;" >{{ housing.name }}</h1></center>
+  <center><h4 class="house-text mt-3">Address: {{ housing.address }}</h4></center>
+
+<div class="row">
+  <div class="col-sm-6">
+  <div class="card-body">
+  <img class="card-img-top" src="{{ housing.image.url }}" alt="house image">
+  </div>
+    </div>
+
+      <div class="col-sm-6">
+    <div class="card-body">
+
+    <center> Overview: </center>
+    <p class="house-text mt-3">{{ housing.description}} </p>
+    <p class="house-text mt-3">Rental Date: {{ housing.startRentalDate}} - {{ housing.endRentalDate}}  </p>
+    <p class="house-text mt-3">price: ${{ housing.price }} </p>
+    <p class="house-text mt-3">bedrooms: {{ housing.numRooms }}</p>
+    <p class="house-text mt-3">bathrooms: {{ housing.numBathrooms }}</p>
+  </div>
+      </div>
+
+
+    </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+  <div style="display: flex;height:5em; justify-content: flex-end">
+  <ion-list>
+      <ion-item *ngFor="let service of services">
+          <span style="font-size:1.5em;font-weight:bold;">Rating: {{housing.rating}}</span>
+          <form action="{% url 'basicsite:newreview' housing.id %}"><ion-icon name="create">
+              {% csrf_token %}
+              <button ion-fab mini color="secondary"><ion-icon name="create">rate this place</ion-icon></button>
+          </ion-icon></form>
+      </ion-item>
+  </ion-list>
+</div>
+    <h5 class="house-text mt-3">All Reviews </h4>
+{% for review in housing.review_set.all %}
+        <div class="card" style="width: 100%; background-color:rgb(191, 209, 236);">
+  <div class="card-header">
+<h5 class="mt-0">Rating: {{review.rating}}/5
+</div>
+</h5>{{review.review_text}}
+
+            </div>
+{% endfor %}
+</div>
+<form action="{% url 'basicsite:index' %}">
+{% csrf_token %}
+</form>
+<a class="btn btn-outline-danger float-right mb-2" href="/basicsite/">Go Back to Housing</a>
+
+<!-- <div style="padding:70px">
+<center><h1>{{housing}}</h1></center>
+<ul>
+    <form action="{% url 'basicsite:newreview' housing.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary btn-block">Rate this place</button>
+    </form>
+{% for review in housing.review_set.all %}
+    <li>{{ review.rating }}</li>
+    <li>{{ review.review_text }}</li>
+{% endfor %}
+<form action="{% url 'basicsite:index' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary btn-block">Go back</button>
+</form>
+</ul>
+</div> -->
+</html>
